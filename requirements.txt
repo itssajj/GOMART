@@ -9,4 +9,4 @@ pytz==2023.3.post1
 sqlparse==0.4.4
 tzdata==2023.3
 virtualenv==20.23.0
-gunicorn==<21.2.0>  # Add the latest version of Gunicorn here
+# gunicorn==<21.2.0>  # Add the latest version of Gunicorn here
