@@ -24,4 +24,8 @@ pytz==2023.3.post1
 sqlparse==0.4.4
 tzdata==2023.3
 virtualenv==20.23.0
+echo "gunicorn"
 >>>>>>> 4fdde61dc859cecf9266f3515fa23edaa2461777
+=======
+
+>>>>>>> 6b7d75539e013e20411732a7c21917208542cd76
