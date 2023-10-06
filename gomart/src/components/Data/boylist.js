@@ -110,7 +110,7 @@ function Boylist({ item }) {
           <Card.Title style={{ fontFamily: '' }}>
            <h6> {maleclothesItem.name}</h6>
           </Card.Title>
-          <Card.Title style={{ fontFamily: '',float:'right',marginTop:'-30px' ,color:'green'}}>
+          <Card.Title style={{ fontFamily: '',float:'right',marginTop:'-30px' ,color:'grey'}}>
            <h6>₦ {maleclothesItem.price}</h6>
           </Card.Title>
         </Card.Body>
