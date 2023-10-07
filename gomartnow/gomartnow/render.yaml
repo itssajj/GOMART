@@ -2,5 +2,5 @@
 version: 1
 services:
   - name: gomartnow
-    buildCommand: ./gomartnow/build.sh
+    buildCommand: ./build.sh
     rootDirectory: gomartnow
