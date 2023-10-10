@@ -50,7 +50,7 @@ function Navbar3({ cartLength }) {
     })
     .then(response => {
       if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('network error');
       }
       return response.json();
   })

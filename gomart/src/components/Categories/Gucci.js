@@ -36,7 +36,7 @@ function Gucci() {
     fetch('http://localhost:8000/api/products/')
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('network error');
         }
         return response.json();
       })
@@ -44,7 +44,7 @@ function Gucci() {
         setProducts(data);
       })
       .catch((error) => {
-        console.error('There was a problem with the fetch operation:', error);
+        console.error('fetch error:', error);
       });
   }, []);
 

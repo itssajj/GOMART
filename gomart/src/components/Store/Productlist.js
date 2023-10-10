@@ -11,7 +11,7 @@ function ProductList() {
         fetch('http://localhost:8000/api/products/') // Adjust the URL as needed
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('network error');
                 }
                 return response.json();
             })
@@ -23,7 +23,7 @@ function ProductList() {
                 console.log(data);
             })
             .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error('fetch error:', error);
             });
     }, []);
 

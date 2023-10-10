@@ -19,10 +19,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gomartapp.views import Product_list,UserCreate,UserLogin,get_user_name, add_to_cart ,get_cart_data ,CreateProfile
+from gomartapp.views import Product_list,UserCreate,UserLogin,get_user_name ,get_cart_data ,CreateProfile
 from django.conf import settings
 from django.conf.urls.static import static
-# from gomartapp.views import AddToCart
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,8 +29,6 @@ urlpatterns = [
     path('api/register/', UserCreate.as_view(), name='user-create'),
     path('api/login/', UserLogin.as_view(), name='user-login'),
     path('api/get_user_name/', get_user_name, name='get_user_name'),
-    # path('api/add-to-cart/', add_to_cart, name='add-to-cart'),
-     path('api/add-to-cart/', add_to_cart, name='add-to-cart'),  
       path('api/get-cart-data/',get_cart_data, name='get_cart_data'),
  path('api/create-profile/', CreateProfile.as_view(), name='create-profile'),  ]
 

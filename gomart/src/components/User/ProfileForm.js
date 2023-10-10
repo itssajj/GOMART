@@ -46,7 +46,7 @@ function UserProfile() {
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('network error');
       }
 
       // Handle a successful response, e.g., redirect to a profile page

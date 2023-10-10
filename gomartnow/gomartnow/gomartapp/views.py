@@ -6,14 +6,11 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.contrib.auth.models import AbstractUser
 from .serializers import UserSerializer ,UserProfileSerializer
-# from .models import CustomUser
-# from django.contrib.auth.models import AbstractUser
 from django.db import models 
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate, login
-# from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
@@ -63,30 +60,29 @@ class UserLogin(APIView):
         else:
             return Response({'message': 'Login failed'}, status=status.HTTP_401_UNAUTHORIZED)
 
-@api_view(['POST'])
-def add_to_cart(request):
-    product_name = request.data.get('product_name')
+# @api_view(['POST'])
+# def add_to_cart(request):
+#     product_name = request.data.get('product_name')
     
-    try:
-        # Fetch the first product with the given name
-        product = Product.objects.filter(name=product_name).first()
-        if not product:
-            return JsonResponse({'error': 'Product not found'}, status=404)
-    except Product.DoesNotExist:
-        return JsonResponse({'error': 'Product not found'}, status=404)
+#     try:
+#         product = Product.objects.filter(name=product_name).first()
+#         if not product:
+#             return JsonResponse({'error': 'Product not found'}, status=404)
+#     except Product.DoesNotExist:
+#         return JsonResponse({'error': 'Product not found'}, status=404)
 
-    cart = request.session.get('cart', {})
+#     cart = request.session.get('cart', {})
 
-    if product_name in cart:
-        cart[product_name]['quantity'] += 1
-    else:
-        cart[product_name] = {
-            'name': product.name,
-            'price': str(product.price),
-            'quantity': 1,
-        }
-    request.session['cart'] = cart
-    return JsonResponse({'message': 'Product added to cart successfully'}, status=200)
+#     if product_name in cart:
+#         cart[product_name]['quantity'] += 1
+#     else:
+#         cart[product_name] = {
+#             'name': product.name,
+#             'price': str(product.price),
+#             'quantity': 1,
+#         }
+#     request.session['cart'] = cart
+#     return JsonResponse({'message': 'Product added to cart successfully'}, status=200)
 
 
 def get_cart_data(request):

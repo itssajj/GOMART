@@ -58,7 +58,7 @@ class Product(models.Model):
         ('SHORTS', 'SHORTS'),
         ('SNEAKER', 'SNEAKER'),
         ('CAP', 'CAP'),
-         ('HOODIE', 'HOODIE'),
+        ('HOODIE', 'HOODIE'),
         ('TSHIRT', 'TSHIRT'),
         ('JERSEY', 'JERSEY'),
         ('CAP', 'CAP'),
@@ -66,7 +66,6 @@ class Product(models.Model):
         ('SOCKS', 'SOCKS'),
         ('WATCHES', 'WATCHES'),
         ('BAGS', 'BAGS'),
-
         ('N', 'NONE'),
     )
     group = models.CharField(max_length=20, choices=GROUP_CHOICES, default='N') 
@@ -93,9 +92,7 @@ class Product(models.Model):
             ('Converse', 'Converse'),
             ('Metalica', 'Metalica'),
             ('Under', 'Under'),
-
-
-            ('N', 'None')   
+            ('N', 'None'),  
     )
     brand = models.CharField(max_length=20, choices=BRAND_CHOICES, default='N') 
 
