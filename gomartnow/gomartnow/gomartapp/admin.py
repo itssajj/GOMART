@@ -1,15 +1,22 @@
 from django.contrib import admin
-# from .models import CustomUser
 
+from gomartapp.models import CartItem
 
 
 from gomartapp.models import Product
 
-from gomartapp.models import UserProfile
+from gomartapp.models import UserMessage,Checkout,Customer
 
-# Register your models here.
+
 
 admin.site.register(Product)
-admin.site.register(UserProfile)
+# admin.site.register(UserProfile)
+admin.site.register(CartItem)
+# admin.site.register(UserMessage)
+
+admin.site.register(Checkout)
+
+admin.site.register(Customer)
+
 
 # admin.site.register(CustomUser)

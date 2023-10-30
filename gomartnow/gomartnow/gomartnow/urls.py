@@ -18,20 +18,42 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from gomartapp.views import Product_list,UserCreate,UserLogin,get_user_name ,get_cart_data ,CreateProfile
+from django.urls import path,re_path
+from gomartapp.views import Product_list,Cart_list,UserCreate,UserLogin ,CreateProfile, get_user_info,UserInfoView, AddToCart, post_message,Checkout,AddCustomer,Customer_list,index,delete_cart_item
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/products/", Product_list, name="product-list"),
+        path("api/cart/", Cart_list, name="cart-list"),
+        path('api/cart/delete/<int:cart_item_id>/', delete_cart_item, name='delete-cart-item'),
+
+                path("api/customer-list/", Customer_list, name="customer-list"),
+#  re_path(r'^.*$',index, name='index'),        
+                # path("api/Prolifelist/", Profile_list, name="Profile-list"),
+                #  path('', index, name='index'),
+#  re_path(r'^.*', index, name='index'),
     path('api/register/', UserCreate.as_view(), name='user-create'),
     path('api/login/', UserLogin.as_view(), name='user-login'),
-    path('api/get_user_name/', get_user_name, name='get_user_name'),
-      path('api/get-cart-data/',get_cart_data, name='get_cart_data'),
- path('api/create-profile/', CreateProfile.as_view(), name='create-profile'),  ]
+      path('api/get_user_info/', get_user_info, name='get_user_info'),
+    path('api/create-profile/', CreateProfile.as_view(), name='create-profile'), 
+# path('api/add-to-cart/<str:product_name>/', CartItemAddVi,ew.as_view(), name='cart-add'),
+# path('api/add-to-cart/', add_to_cart, name='add_to_cart'),
+    path('api/user-info/', UserInfoView.as_view(), name='user-info'),
+    path('api/add-to-cart/',AddToCart.as_view(), name='add-to-cart'),
+        path('api/add-customer/',AddCustomer.as_view(), name='add-customer'),
+
+        path('api/Checkout/',Checkout.as_view(), name='Checkout'),
+
+
+
+
+     path('api/post_message/', post_message, name='post_message'),
+
+]      
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

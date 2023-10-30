@@ -14,9 +14,10 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = BASE_DIR / ''
 
-STATIC_DIR = BASE_DIR / "static"
-MEDIA_ROOT = BASE_DIR / "media"
+STATIC_DIR = BASE_DIR / ""
+MEDIA_ROOT = BASE_DIR / ""
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -41,33 +42,58 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
         'gomartapp',
          'corsheaders',
+          'rest_framework',
+    'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+     'django.contrib.sessions.middleware.SessionMiddleware',
+    #  'django.middleware.csrf.CsrfViewMiddleware',
+     'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    
-    
+  
 ]
-CORS_ALLOW_ALL_ORIGINS = True
-
+# CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
-    "http://127.0.0.1:8000",  
+    "http://localhost:3000",
+    # "http://localhost:8000",
+
+    
+    "http://127.0.0.1:8000",
 ]
+# CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',  # Include OPTIONS if needed
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
+
+
+# CSRF_TRUSTED_ORIGINS = [
+#     "http://localhost:3000",
+#      "http://localhost:8000",
+
+    
+#     "http://127.0.0.1:8000",
+# ]
 
 ROOT_URLCONF = 'gomartnow.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'gomart/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +105,11 @@ TEMPLATES = [
         },
     },
 ]
+# CSRF_COOKIE_SECURE = False
+# CSRF_COOKIE_HTTPONLY = False
+# CSRF_COOKIE_NAME = 'csrftoken'
+
+
 
 WSGI_APPLICATION = 'gomartnow.wsgi.application'
 
@@ -92,7 +123,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -151,15 +181,38 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
 
-    STATIC_DIR,
+os.path.join(BASE_DIR,'gomart/build/static')
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'gomart/build')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'gomart/build')
+# os.path.join(BASE_DIR,'gomart/build')
 
 # Define the URL prefix for serving media files.
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/api/login/'
+
+
+# LOGIN_URL = '/api/login/'  # Replace with your actual login URL
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+         'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+# ALLOWED_HOSTS = ["http://localhost:3000", "http://127.0.0.1:8000",]
+# CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:8000",]
+# CSRF_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:8000",]
+# CORS_ORIGINS_WHITELIST = ["http://localhost:3000", "http://127.0.0.1:8000",]
+# settings.py
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'BUNDLE_DIR_NAME': 'bundles/',
+#         'STATS_FILE': os.path.join(BASE_DIR, 'gomart', 'webpack-stats.json'),
+#     }
+# }
