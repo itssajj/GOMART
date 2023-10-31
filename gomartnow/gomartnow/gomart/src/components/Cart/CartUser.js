@@ -159,9 +159,29 @@ const handleDeleteItem = (cartItemId) => {
   return (
     <div className="">
       {/* <Search /> */}
-      <br/>
-      < hr style={{color:'green'}} />
+      {/* <br/> */}
+      {/* < hr style={{color:'green'}} /> */}
+      {/* <div style={{backgroundColor:'#8A9A5B', color:'white'}}> */}
+{/* <hr/> */}
+ {/* <i class='fas fa-cart-arrow-down'></i> */}
 
+      {/* <h6> */}
+      {/* {cartItemCount} */}
+      {/* &nbsp;  {loggedInUsername}'s &nbsp;
+        // <i class='fas fa-cart-arrow-down'></i>
+      </h6>
+      <p> &nbsp; Cart Amount : ₦{checkoutPrice}</p> */}
+      {/* </div> */}
+
+      < hr style={{color:'lime'}} />
+      {selectedItem && <ClothingDetail clothingItem={selectedItem} />}
+      {/* <Navbar3 cartItemCount={cartItemCount} /> */}
+
+
+<div className='container'>
+{/* < hr style={{color:'lime'}} /> */}
+
+{/* < hr style={{color:'green'}} /> */}
       <div style={{backgroundColor:'#088F8F', color:'white'}}>
 <hr/>
 
@@ -174,9 +194,8 @@ const handleDeleteItem = (cartItemId) => {
       </div>
 
 
-      < hr style={{color:'lime'}} />
-      {selectedItem && <ClothingDetail clothingItem={selectedItem} />}
-      {/* <Navbar3 cartItemCount={cartItemCount} /> */}
+
+
 
       <Table striped bordered hover>
         <thead>
@@ -196,6 +215,7 @@ const handleDeleteItem = (cartItemId) => {
       <button   style={{ float: '', textDecoration: '' , color:'white'}} onClick={handleCheckout} className="btn btn-dark">
       <i class='fab fa-cc-amazon-pay'></i>  &nbsp;  ₦{checkoutPrice}
 </button>
+</div>
           <br/>
       <hr/>
     </div>

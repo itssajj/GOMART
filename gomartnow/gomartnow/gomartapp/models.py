@@ -12,7 +12,7 @@ class Customer(models.Model):
     # firstname = models.CharField(max_length=100 ,default='none')
     # lastname = models.CharField(max_length=100 ,default='none')
     city = models.CharField(max_length=100 ,default='none')
-    customerimage = models.ImageField( blank=True, null=True)  
+    customerimage = models.ImageField(upload_to='gomartfiles/static/profile_pictures', blank=True, null=True)  
 
     
     def __str__(self):

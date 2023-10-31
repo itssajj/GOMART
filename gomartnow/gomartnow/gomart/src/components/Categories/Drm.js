@@ -78,13 +78,13 @@ function Drm() {
               ₦{maleclothesItem.price}
             </Card.Text>
             <h5>★★★☆☆</h5> */}
-            <Button
+            {/* <Button
               onClick={() => handleAddToCart(maleclothesItem)}
               variant="dark"
               style={{ fontFamily: '' }}
             >
               Add to cart 🛒
-            </Button>
+            </Button> */}
           </Card.Body>
         </Card>
       </Col>

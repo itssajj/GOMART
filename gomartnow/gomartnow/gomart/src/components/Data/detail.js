@@ -199,11 +199,18 @@ ratingValue:ratingValue,
       <hr/>
       <h6 style={{fontSize:'14px',color:'GrayText'}}>  {clothingItem.description} clothing item material is a the well made and selected fitting for comfortablity. offers the best quality when it comes to affordable clothing item this is washable and ironable. This is a {clothingItem.description}</h6><hr/>
       <b style={{float:'right'}}>
+
    &nbsp;
+
    {clothingItem.color.charAt(0).toUpperCase() + clothingItem.color.slice(1).toLowerCase()}
    &nbsp; <span style={{ marginLeft: '3px', border:'1px black solid',textTransform: 'capitalize', display: 'inline-block', width: '15px', height: '12px',borderRadius:'5O%', backgroundColor: clothingItem.color }}></span>
    </b>
       <h6 style={{color:'grey'}} > ₦{clothingItem.price}</h6><hr/>
+
+
+
+
+      
       <b> Rating : <span style={{marginLeft:'',color:'brown'}}> <Rating
         name="simple-controlled"
         value={ratingValue} 

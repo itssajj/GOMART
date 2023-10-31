@@ -81,13 +81,13 @@ function Hublot() {
               ₦{maleclothesItem.price}
             </Card.Text>
             <h5>★★★☆☆</h5> */}
-            <Button
+            {/* <Button
               onClick={() => handleAddToCart(maleclothesItem)}
               variant="outline-dark"
               style={{ fontFamily: '' }}
             >
               Add to cart 🛒
-            </Button>
+            </Button> */}
           </Card.Body>
         </Card>
       </Col>

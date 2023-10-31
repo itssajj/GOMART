@@ -19,7 +19,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path
-from gomartapp.views import Product_list,Cart_list,UserCreate,UserLogin ,CreateProfile, get_user_info,UserInfoView, AddToCart, post_message,Checkout,AddCustomer,Customer_list,index,delete_cart_item
+from gomartapp.views import Product_list,Cart_list,UserCreate,UserLogin ,CreateProfile, get_user_info,UserInfoView, AddToCart, post_message,Checkout,AddCustomer,Customer_list,index,delete_cart_item,deploy
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.decorators.csrf import csrf_exempt
@@ -33,7 +33,7 @@ urlpatterns = [
                 path("api/customer-list/", Customer_list, name="customer-list"),
 #  re_path(r'^.*$',index, name='index'),        
                 # path("api/Prolifelist/", Profile_list, name="Profile-list"),
-                #  path('', index, name='index'),
+                 path('', deploy, name='deploy'),
 #  re_path(r'^.*', index, name='index'),
     path('api/register/', UserCreate.as_view(), name='user-create'),
     path('api/login/', UserLogin.as_view(), name='user-login'),

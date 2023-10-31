@@ -26,9 +26,9 @@ MEDIA_ROOT = BASE_DIR / ""
 SECRET_KEY = 'django-insecure-a-*=177(1128_tqr^&rrl%96&6q-7q25ztvayjep@l=9*uyklk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','localhost:8000','localhost:3000','localhost',]
 
 
 # Application definition
@@ -49,6 +49,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+        #  'whitenoise.middleware.WhiteNoiseMiddleware',
+
      'django.contrib.sessions.middleware.SessionMiddleware',
     #  'django.middleware.csrf.CsrfViewMiddleware',
      'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,7 +95,7 @@ ROOT_URLCONF = 'gomartnow.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'gomart/build')],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

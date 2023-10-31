@@ -63,7 +63,7 @@ export default function Navbar4() {
   
   return (
     <>
-      <MDBTabs pills className='mb-2 bg-black' style={{height:'50px'}}>
+      <MDBTabs pills className='mb-2 bg-black' style={{height:'60px'}}>
         <MDBTabsItem>
           <Link                                   onClick={() => handleBasicClick('clothing')}
 
@@ -72,7 +72,7 @@ export default function Navbar4() {
             className='my-5'
             style={{ textDecoration: 'none',color:'white', marginTop:'30px' , verticalAlign: 'middle'   }}
           >
-        <h6 style={{marginTop:'20px',marginLeft:'20px'}}>  Gomart &nbsp;</h6>  &nbsp; &nbsp; 
+        <h5 style={{marginTop:'20px',marginLeft:'20px'}}>  Gomart &nbsp;</h5>  &nbsp; &nbsp; 
           </Link >
         </MDBTabsItem>
         <MDBTabsItem>
@@ -86,7 +86,7 @@ export default function Navbar4() {
             active={basicActive === 'tab2'}
             style={{ textDecoration: 'none',color:'white', marginTop:'', verticalAlign: 'middle'  }}
           >
-        <h6 style={{marginTop:'20px',marginLeft:'40px'}}>  Male &nbsp;</h6>   
+        <h6 style={{marginTop:'25px',marginLeft:'60px'}}>  Male &nbsp;</h6>   
           </Link ></Navbar.Brand>
         </MDBTabsItem>
         <MDBTabsItem>
@@ -99,7 +99,7 @@ export default function Navbar4() {
             active={basicActive === 'tab3'}
             style={{ textDecoration: 'none',color:'white', marginTop:'30px' , verticalAlign: 'middle'  }}
           >
-        <h6 style={{marginTop:'20px',marginLeft:'10px'}}>  Female &nbsp;</h6>   
+        <h6 style={{marginTop:'25px',marginLeft:'27px'}}>  Female &nbsp;</h6>   
           </Link >
         </MDBTabsItem>
       </MDBTabs>

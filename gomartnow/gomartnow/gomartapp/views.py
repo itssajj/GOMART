@@ -52,6 +52,10 @@ def csrf_exempt_view(view):
 def index(request):
     return render(request, 'index.html')
 
+def deploy(request):
+    return render(request, 'deploy.html')
+
+
 class Checkout(generics.CreateAPIView):
     queryset = Checkout.objects.all()  # Replace with your actual model.
     serializer_class = CheckoutSerializer # Replace with your serializer.
@@ -104,10 +108,6 @@ class AddCustomer(generics.CreateAPIView):
             return Response({'message': 'customer updated'}, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
 
 
 def Cart_list(request):

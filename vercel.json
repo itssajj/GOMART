@@ -1,0 +1,26 @@
+{
+
+"build": [{
+    "src": "gomartnow/wsgi.py",
+    "use": "@vercel/python",
+    "config":{"'maxi.ambdaSize" : "15mb", "runtime":"python3.9"}
+
+
+
+
+}],
+"routes" : [
+
+
+    {
+
+        "src": "/(.*)",
+        "dest": "gomartnow/wsgi.py"
+    }
+]
+
+
+
+
+
+}
