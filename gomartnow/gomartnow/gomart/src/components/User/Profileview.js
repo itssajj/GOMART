@@ -69,7 +69,7 @@ function ViewProfile() {
                 <i className="fas fa-marker"></i> Edit Profile
               </span>
             </Link>
-            {/* <i class='fas fa-images'></i> */}
+            <i class='fas fa-images'></i>
 
           </div>
           <hr style={{ color: 'green' }} />

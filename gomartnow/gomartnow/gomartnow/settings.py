@@ -14,10 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR = BASE_DIR / ''
-
-STATIC_DIR = BASE_DIR / ""
-MEDIA_ROOT = BASE_DIR / ""
+TEMPLATE_DIR = BASE_DIR / 'templates'
+STATIC_DIR = BASE_DIR / 'static'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,7 +25,7 @@ MEDIA_ROOT = BASE_DIR / ""
 SECRET_KEY = 'django-insecure-a-*=177(1128_tqr^&rrl%96&6q-7q25ztvayjep@l=9*uyklk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'False'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','localhost:8000','localhost:3000','localhost',]
 
@@ -56,13 +55,13 @@ MIDDLEWARE = [
      'django.contrib.auth.middleware.AuthenticationMiddleware',
         'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
   
 ]
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     # "http://localhost:8000",
@@ -114,6 +113,7 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'gomartnow.wsgi.application'
+
 
 
 # Database
@@ -202,10 +202,10 @@ LOGIN_URL = '/api/login/'
 
 # LOGIN_URL = '/api/login/'  # Replace with your actual login URL
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-         'rest_framework.authentication.TokenAuthentication',
-    ],
+'DEFAULT_RENDERER_CLASSES': [
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.authentication.TokenAuthentication',
+],
 }
 # ALLOWED_HOSTS = ["http://localhost:3000", "http://127.0.0.1:8000",]
 # CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:8000",]
